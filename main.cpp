@@ -8,7 +8,7 @@ using namespace std;
 
 void agregarSeleccion();
 void listarSeleccion();
-//void eliminarSeleccion();
+void eliminarSeleccion();
 //void abrirArchivo();
 lista list;
 
@@ -31,12 +31,11 @@ int main(){
             break;
 
             case '2':
-            listarSeleccion();
-            cout<<"OJO-> Solo puedo listar cuando te salis del programa, ni idea porque :/"<<endl;
+            list.imprimir();
             break;
 
             case '3':
-            //eliminarSeleccion();
+            eliminarSeleccion();
             break;
 
             case '4':
@@ -50,7 +49,7 @@ int main(){
                 cout<<"Fuera de Rango"<<endl;
         }
     }while(seguido==true);
-    list.imprimir();
+
     return 0;
 }
 
@@ -90,6 +89,13 @@ void listarSeleccion(){
         cout<<"3.Selecciones mas ganadores: "<<endl;
         cin>>opcion;
     
+}
+
+void eliminarSeleccion(){
+    string nombre;
+    cout <<"Ingrese el nombre de la selección a eliminar: " << endl;
+    cin >> nombre;
+    list.eliminar(list.buscarNodo(nombre));
 }
 
 void abrirArchivo(){

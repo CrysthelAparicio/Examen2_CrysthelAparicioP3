@@ -33,7 +33,7 @@ void lista::agregarDespues(Nodo *&prev, Nodo x){
     y->setSiguiente(temp);
 }
 
-void lista::eliminar(Nodo *&x){
+void lista::eliminar(Nodo *x){
     Nodo* temp = x;
     if(head == x){
         head = head->getSiguiente();
@@ -54,6 +54,14 @@ void lista::imprimir(){
         temp = temp->getSiguiente();	
     }
     cout << "\n";
+}
+
+Nodo* lista::buscarNodo(string nombre){
+	Nodo* temp = head;
+	while(temp->getSeleccion().getNombre() != nombre){
+		temp = temp->getSiguiente();	
+	}
+	return temp;
 }
 
 lista::~lista(){

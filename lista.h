@@ -15,8 +15,9 @@ class lista{
     void agregarInicio(Nodo x);
     void agregarFinal(Nodo x);
     void agregarDespues(Nodo *&prev, Nodo x);
-    void eliminar(Nodo *&x);
+    void eliminar(Nodo *x);
     void imprimir();
+    Nodo* buscarNodo(string);
     ~lista();
   	
 };
