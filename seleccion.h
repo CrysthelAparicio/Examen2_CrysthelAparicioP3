@@ -27,6 +27,11 @@ class seleccion{
 
         void toString();
         string tS();
+        void write(ofstream&);
+        void read(ifstream&);
+        friend ostream& operator<<(ostream&,const seleccion&);
+        friend istream& operator>>(istream&, seleccion&);
+
 
         void setNombre(string);
         void setPartiGanados(int);
