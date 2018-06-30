@@ -32,6 +32,7 @@ int main(){
 
             case '2':
             listarSeleccion();
+            cout<<"OJO-> Solo puedo listar cuando te salis del programa, ni idea porque :/"<<endl;
             break;
 
             case '3':
@@ -76,8 +77,10 @@ void agregarSeleccion(){
     Nodo n(sele);
     list.agregarInicio(n);
 
-    ofstream fsalida("Seleccion.bin",ios::out|ios::binary);
-    
+    ofstream fsalida("Seleccion.bin", ios::out | ios::binary);
+    fsalida.write(reinterpret_cast<char*>(&sele),sizeof(seleccion*));
+    fsalida.close();
+
 }
 
 void listarSeleccion(){
@@ -87,4 +90,10 @@ void listarSeleccion(){
         cout<<"3.Selecciones mas ganadores: "<<endl;
         cin>>opcion;
     
+}
+
+void abrirArchivo(){
+    seleccion* sele;
+
+    //ifstream fentrada("Equipos")
 }
